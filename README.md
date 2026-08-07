@@ -514,10 +514,13 @@ NEXUS-DMS/
 ├── 📄 logger.py                    Thread-safe CSV event logger
 ├── 📄 dashboard.py                 Flask web dashboard with real-time analytics
 ├── 📄 requirements.txt             Fully pinned dependency list
+├── 📄 LICENSE                      Academic & Research license
+├── 📄 .env                         Your private credentials (never committed)
 ├── 📄 .env.example                 Template — copy to .env and fill in secrets
 ├── 📄 .gitignore                   Excludes .env, models, logs, screenshots
 │
 ├── 📦 modules/
+│   ├── 📄 __init__.py              Package initializer
 │   ├── 📄 alert_manager.py         Core alert engine — voice/buzzer/SMS+GPS state machine
 │   ├── 📄 camera.py                Camera abstraction over OpenCV VideoCapture
 │   ├── 📄 face_analyzer.py         MediaPipe FaceMesh wrapper — returns FaceData object
@@ -526,18 +529,30 @@ NEXUS-DMS/
 │   ├── 📄 distraction_detector.py  Head pose estimation — 4 directional zones
 │   └── 📄 phone_detector.py        YOLOv8 COCO-67 + 5-layer false-positive filter
 │
+├── 🌐 templates/
+│   └── 📄 dashboard.html           Flask dashboard HTML template
+│
+├── 🎨 static/
+│   ├── css/dashboard.css           Dashboard stylesheet
+│   └── js/dashboard.js             Dashboard JavaScript
+│
 ├── 🔊 sounds/
 │   └── 📄 alarm.wav                Buzzer alarm audio (looping, Pygame)
 │
+├── 🖼️ assets/
+│   ├── banner.jpg                  README banner image
+│   └── architecture.jpg            System architecture diagram
+│
+├── 🧪 scripts/
+│   ├── 📄 test_camera.py           Camera feed sanity check
+│   ├── 📄 test_alarm.py            Buzzer audio test
+│   ├── 📄 test_voice.py            TTS voice alert test
+│   └── 📄 test_sms.py              End-to-end Twilio SMS + GPS test
+│
 ├── 📸 screenshots/                 Auto-captured alert evidence (gitignored)
 ├── 📊 logs/alerts.csv              Timestamped event log (gitignored)
-├── 🎨 assets/                      Banner and architecture images
-│
-└── 🧪 scripts/
-    ├── 📄 test_camera.py           Camera feed sanity check
-    ├── 📄 test_alarm.py            Buzzer audio test
-    ├── 📄 test_voice.py            TTS voice alert test
-    └── 📄 test_sms.py              End-to-end Twilio SMS + GPS test
+├── 🤖 models/                      Model storage directory
+└── 🎥 recordings/                  Session recording storage
 ```
 
 ---
