@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SafeDrive AI — Real-time driver safety monitoring dashboard with analytics and alert history.">
+    <title>SafeDrive AI Dashboard</title>
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">🛡️</span>
+                <h1>SafeDrive <span class="accent">AI</span></h1>
+            </div>
+            <div class="header-meta">
+                <span class="live-indicator"><span class="pulse"></span> Dashboard</span>
+                <span id="last-updated" class="last-updated"></span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Safety Score Section -->
+        <section class="score-section">
+            <div class="score-card">
+                <div class="score-ring-container">
+                    <svg class="score-ring" viewBox="0 0 120 120">
+                        <circle class="score-ring-bg" cx="60" cy="60" r="52" />
+                        <circle id="score-ring-fill" class="score-ring-fill" cx="60" cy="60" r="52"
+                            stroke-dasharray="326.73" stroke-dashoffset="326.73" />
+                    </svg>
+                    <div class="score-value">
+                        <span id="safety-score">--</span>
+                        <span class="score-label">Safety Score</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Metric Cards -->
+        <section class="metrics-grid">
+            <div class="metric-card metric-total">
+                <div class="metric-icon">📊</div>
+                <div class="metric-body">
+                    <span class="metric-value" id="total-alerts">0</span>
+                    <span class="metric-label">Total Alerts</span>
+                </div>
+            </div>
+            <div class="metric-card metric-drowsy">
+                <div class="metric-icon">😴</div>
+                <div class="metric-body">
+                    <span class="metric-value" id="drowsy-count">0</span>
+                    <span class="metric-label">Drowsy Events</span>
+                </div>
+            </div>
+            <div class="metric-card metric-yawn">
+                <div class="metric-icon">🥱</div>
+                <div class="metric-body">
+                    <span class="metric-value" id="yawn-count">0</span>
+                    <span class="metric-label">Yawn Events</span>
+                </div>
+            </div>
+            <div class="metric-card metric-phone">
+                <div class="metric-icon">📱</div>
+                <div class="metric-body">
+                    <span class="metric-value" id="phone-count">0</span>
+                    <span class="metric-label">Phone Detections</span>
+                </div>
+            </div>
+            <div class="metric-card metric-distraction">
+                <div class="metric-icon">👀</div>
+                <div class="metric-body">
+                    <span class="metric-value" id="distraction-count">0</span>
+                    <span class="metric-label">Distractions</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Charts Section -->
+        <section class="charts-section">
+            <div class="chart-card">
+                <h2 class="chart-title">Event Distribution</h2>
+                <div class="chart-container" id="distribution-chart"></div>
+            </div>
+            <div class="chart-card">
+                <h2 class="chart-title">Alert Timeline</h2>
+                <div class="chart-container" id="timeline-chart"></div>
+            </div>
+        </section>
+
+        <!-- Recent Events Table -->
+        <section class="table-section">
+            <div class="table-card">
+                <div class="table-header">
+                    <h2 class="chart-title">Recent Alerts</h2>
+                    <span class="table-badge" id="table-count">0 events</span>
+                </div>
+                <div class="table-wrapper">
+                    <table class="events-table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Event</th>
+                                <th>Severity</th>
+                            </tr>
+                        </thead>
+                        <tbody id="events-tbody">
+                            <tr class="empty-row">
+                                <td colspan="4">No events recorded yet</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>SafeDrive AI &mdash; Driver Monitoring &amp; Cloud Alert System &copy; 2026</p>
+    </footer>
+
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>

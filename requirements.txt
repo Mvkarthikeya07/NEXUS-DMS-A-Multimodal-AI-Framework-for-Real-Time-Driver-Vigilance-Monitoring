@@ -1,0 +1,31 @@
+# SafeDrive AI — Dependencies
+# Install: pip install -r requirements.txt
+
+# Core Computer Vision
+opencv-python>=4.8.0
+mediapipe>=0.10.9,<0.11.0
+numpy>=1.24.0
+# IMPORTANT: protobuf 5+ breaks mediapipe 0.10.x — keep pinned below 5.0.0
+protobuf>=4.25.3,<5.0.0
+
+# Object Detection
+ultralytics>=8.0.0
+torch>=2.0.0
+torchvision>=0.15.0
+
+# Audio & Voice
+pygame>=2.5.0
+pyttsx3>=2.90
+
+# SMS & Location
+twilio>=8.0.0
+geocoder>=1.38.0
+
+# Web Dashboard
+flask>=3.0.0
+
+# Configuration
+python-dotenv>=1.0.0
+
+# Data Processing (dashboard)
+requests>=2.31.0
