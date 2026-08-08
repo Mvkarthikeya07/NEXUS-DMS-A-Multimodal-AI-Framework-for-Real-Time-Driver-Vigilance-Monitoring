@@ -933,7 +933,7 @@ Once the camera opens, the HUD overlay provides a real-time dashboard:
 
 ## 📄 License
 
-This project is licensed for **Academic and Research** use only.
+MIT License — see [LICENSE](LICENSE) for full terms.
 
 > Redistribution, commercial use, or deployment in production vehicles
 > requires explicit written permission from the author.
